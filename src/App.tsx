@@ -15,8 +15,6 @@ function App() {
     (letter: string) => !wordToGuess.includes(letter)
   );
 
-  console.log(wordToGuess, guessedLetters, incorrectLetters);
-
   const isWinner: boolean = wordToGuess
     .split("")
     .every((letter) => guessedLetters.includes(letter));

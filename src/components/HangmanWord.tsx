@@ -9,7 +9,7 @@ export default function HangmanWord({
   guessedLetters,
 }: HangmanWordProps) {
   const reveal = isLoser;
-  console.log(reveal);
+
   return (
     <div
       style={{
