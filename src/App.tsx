@@ -28,13 +28,25 @@ function App() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        padding: "40px",
+        padding: "30px",
         gap: "40px",
         justifyContent: "center",
       }}
     >
-      <HangmanDrawing numOfGuesses={incorrectLetters.length} />
-      <HangmanWord wordToGuess={wordToGuess} guessedLetters={guessedLetters} />
+      {!isWinner && !isLoser && <h1>HANGMAN GAME</h1>}
+      {isWinner && <h1 style={{ color: "#0ea5e9" }}> You won, hurray! </h1>}
+      {isLoser && (
+        <h1 style={{ color: "red" }}>You lost, Ouch! Refresh & Play again</h1>
+      )}
+      <div style={{ display: "flex", gap: "100px" }}>
+        <HangmanDrawing numOfGuesses={incorrectLetters.length} />
+        <HangmanWord
+          isLoser={isLoser}
+          wordToGuess={wordToGuess}
+          guessedLetters={guessedLetters}
+        />
+      </div>
+
       <Keyboard
         isWinner={isWinner}
         isLoser={isLoser}
