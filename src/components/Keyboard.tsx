@@ -29,11 +29,15 @@ const keys = [
   "Z",
 ];
 type KeyboardProp = {
+  isWinner: boolean;
+  isLoser: boolean;
   wordToGuess: string;
   guessedLetters: string[];
   setGuessedLetters: (prevState: string[]) => void;
 };
 export default function Keyboard({
+  isWinner,
+  isLoser,
   wordToGuess,
   guessedLetters,
   setGuessedLetters,
@@ -57,7 +61,7 @@ export default function Keyboard({
           className={`key ${keyAdditionalStyle(key)}`}
           id={key}
           key={key}
-          disabled={guessedLetters.includes(key)}
+          disabled={isWinner || isLoser || guessedLetters.includes(key)}
           onClick={() => updateGuessedLetters(key)}
         >
           {key}

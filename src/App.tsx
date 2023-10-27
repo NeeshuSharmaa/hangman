@@ -14,8 +14,13 @@ function App() {
   const incorrectLetters: string[] = guessedLetters.filter(
     (letter: string) => !wordToGuess.includes(letter)
   );
-  const [reveal, setReveal] = useState();
+
   console.log(wordToGuess, guessedLetters, incorrectLetters);
+
+  const isWinner: boolean = wordToGuess
+    .split("")
+    .every((letter) => guessedLetters.includes(letter));
+  const isLoser: boolean = incorrectLetters.length === 6;
 
   return (
     <div
@@ -28,12 +33,11 @@ function App() {
         justifyContent: "center",
       }}
     >
-      <HangmanDrawing
-        numOfGuesses={incorrectLetters.length}
-        setReveal={setReveal}
-      />
+      <HangmanDrawing numOfGuesses={incorrectLetters.length} />
       <HangmanWord wordToGuess={wordToGuess} guessedLetters={guessedLetters} />
       <Keyboard
+        isWinner={isWinner}
+        isLoser={isLoser}
         wordToGuess={wordToGuess}
         guessedLetters={guessedLetters}
         setGuessedLetters={setGuessedLetters}
