@@ -1,3 +1,5 @@
+import "./components.css";
+
 const keys = [
   "A",
   "B",
@@ -26,14 +28,21 @@ const keys = [
   "Y",
   "Z",
 ];
-
-export default function Keyboard() {
-  function mouseOver(key: string): void {
-    document.getElementById(key).style.backgroundColor = "#efeeee";
+type KeyboardProp = {
+  wordToGuess: string;
+  guessedLetters: string[];
+  setGuessedLetters: (prevState: string[]) => void;
+};
+export default function Keyboard({
+  wordToGuess,
+  guessedLetters,
+  setGuessedLetters,
+}: KeyboardProp) {
+  function updateGuessedLetters(key: string): void {
+    setGuessedLetters([...guessedLetters, key]);
   }
-  function mouseOut(key: string): void {
-    document.getElementById(key).style.backgroundColor = "whitesmoke";
-  }
+  const keyAdditionalStyle = (key: string): string =>
+    wordToGuess.includes(key) && guessedLetters.includes(key) ? "active" : "";
   return (
     <div
       style={{
@@ -45,19 +54,11 @@ export default function Keyboard() {
     >
       {keys.map((key) => (
         <button
+          className={`key ${keyAdditionalStyle(key)}`}
           id={key}
           key={key}
-          style={{
-            backgroundColor: "whitesmoke",
-            cursor: "pointer",
-            padding: "24px",
-            border: "0",
-            boxShadow: "0 4px 6px 1px rgba(0, 0, 0, 0.1)",
-            boxSizing: "border-box",
-            color: "#1A202C",
-          }}
-          onMouseOver={() => mouseOver(key)}
-          onMouseOut={() => mouseOut(key)}
+          disabled={guessedLetters.includes(key)}
+          onClick={() => updateGuessedLetters(key)}
         >
           {key}
         </button>
