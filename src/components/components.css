@@ -1,0 +1,24 @@
+.key {
+  background-color: #f1f1f1;
+  cursor: pointer;
+  padding: 24px;
+  border: 0;
+  box-shadow: 0 4px 6px 1px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  color: #1a202c;
+}
+
+.key:disabled {
+  background-color: white;
+  box-shadow: none;
+  border: 1px solid #f1f1f1;
+  cursor: not-allowed;
+}
+.key.active {
+  background-color: #0ea5e9;
+  box-shadow: 0 4px 6px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+.key:hover:not(:disabled) {
+  background-color: #efeeee;
+}
