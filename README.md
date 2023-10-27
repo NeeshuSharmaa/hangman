@@ -8,15 +8,27 @@ The Hangman game is a word-guessing game where you need to guess the hidden word
 
 1. You will see a series of dashes representing the letters in the hidden word.
 
+![Start Image](/public/1st.png)
+
 2. Click on the letters on the screen to guess if they are part of the word.
 
-3. If the guessed letter is correct, it will be revealed in its corresponding position in the word.
+- If the guessed letter is correct, it will be revealed in its corresponding position in the word.
 
-4. If the guessed letter is incorrect, a part of the hangman will be drawn on the screen.
+![Middle Image first](/public/2nd_a.png)
+
+- If the guessed letter is incorrect, a part of the hangman will be drawn on the screen.
+
+![Middle Image Second ](/public/2nd_b.png)
 
 5. Continue guessing letters until you either guess the word correctly or the hangman is fully drawn.
 
-6. You win if you guess the word before the hangman is complete; otherwise, you lose.
+- You win if you guess the word before the hangman is complete;
+
+![Win](/public/3rd_a.png)
+
+- otherwise, you lose.
+
+![Loose](/public//3rd_b.png)
 
 Enjoy and have fun!
 
