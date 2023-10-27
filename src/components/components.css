@@ -14,7 +14,7 @@
   border: 1px solid #f1f1f1;
   cursor: not-allowed;
 }
-.key.active:not(:disabled) {
+.key.active {
   background-color: #0ea5e9;
   box-shadow: 0 4px 6px 1px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
