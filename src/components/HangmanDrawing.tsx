@@ -3,7 +3,7 @@ const Head = (
     style={{
       width: "50px",
       height: "50px",
-      border: "10px solid black",
+      border: "10px solid rgb(26, 32, 44)",
       borderRadius: "100%",
       position: "absolute",
       top: "50px",
@@ -16,8 +16,8 @@ const Body = (
   <div
     style={{
       width: "10px",
-      height: "100px",
-      background: "black",
+      height: "80px",
+      background: "rgb(26, 32, 44)",
       position: "absolute",
       top: "120px",
       right: 0,
@@ -28,12 +28,12 @@ const Body = (
 const RightArm = (
   <div
     style={{
-      width: "100px",
+      width: "80px",
       height: "10px",
-      background: "black",
+      background: "rgb(26, 32, 44)",
       position: "absolute",
       top: "150px",
-      right: "-100px",
+      right: "-70px",
       rotate: "-30deg",
       transformOrigin: "left bottom",
     }}
@@ -43,9 +43,9 @@ const RightArm = (
 const LeftArm = (
   <div
     style={{
-      width: "100px",
+      width: "80px",
       height: "10px",
-      background: "black",
+      background: "rgb(26, 32, 44)",
       position: "absolute",
       top: "150px",
       right: "10px",
@@ -58,12 +58,12 @@ const LeftArm = (
 const RightLeg = (
   <div
     style={{
-      width: "100px",
+      width: "80px",
       height: "10px",
-      background: "black",
+      background: "rgb(26, 32, 44)",
       position: "absolute",
-      top: "210px",
-      right: "-90px",
+      top: "190px",
+      right: "-70px",
       rotate: "60deg",
       transformOrigin: "left bottom",
     }}
@@ -73,11 +73,11 @@ const RightLeg = (
 const LeftLeg = (
   <div
     style={{
-      width: "100px",
+      width: "80px",
       height: "10px",
-      background: "black",
+      background: "rgb(26, 32, 44)",
       position: "absolute",
-      top: "210px",
+      top: "190px",
       right: 0,
       rotate: "-60deg",
       transformOrigin: "right bottom",
@@ -98,7 +98,7 @@ export default function HangmanDrawing() {
         style={{
           width: "10px",
           height: "50px",
-          background: "black",
+          background: "rgb(26, 32, 44)",
           position: "absolute",
           right: 0,
           top: 0,
@@ -108,20 +108,24 @@ export default function HangmanDrawing() {
         style={{
           width: "200px",
           height: "10px",
-          background: "black",
+          background: "rgb(26, 32, 44)",
           marginLeft: "120px",
         }}
       ></div>
       <div
         style={{
           width: "10px",
-          height: "400px",
-          background: "black",
+          height: "300px",
+          background: "rgb(26, 32, 44)",
           marginLeft: "120px",
         }}
       ></div>
       <div
-        style={{ width: "250px", height: "10px", background: "black" }}
+        style={{
+          width: "250px",
+          height: "10px",
+          background: "rgb(26, 32, 44)",
+        }}
       ></div>
     </div>
   );

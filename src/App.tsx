@@ -11,7 +11,16 @@ function App() {
   const [guessedLetters, setGuessedLetters] = useState<string>([]);
 
   return (
-    <div className="app">
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        padding: "40px",
+        gap: "40px",
+        justifyContent: "center",
+      }}
+    >
       <HangmanDrawing />
       <HangmanWord />
       <Keyboard />
