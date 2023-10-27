@@ -1,14 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import words from "./wordList.json";
 import HangmanDrawing from "./components/HangmanDrawing";
 import HangmanWord from "./components/HangmanWord";
 import Keyboard from "./components/Keyboard";
 
 function App() {
-  const [wordToGuess, setWordToGuess] = useState(() => {
-    return words[Math.floor(Math.random() * words.length)];
-  });
-  const [guessedLetters, setGuessedLetters] = useState<string>([]);
+  const giveWord = words[Math.floor(Math.random() * words.length)];
+  const [wordToGuess, setWordToGuess] = useState<string>(
+    giveWord.toUpperCase()
+  );
+  const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
+
+  const incorrectLetters: string[] = guessedLetters.filter(
+    (letter: string) => !wordToGuess.includes(letter)
+  );
+  const [reveal, setReveal] = useState();
+  console.log(wordToGuess, guessedLetters, incorrectLetters);
 
   return (
     <div
@@ -21,9 +28,16 @@ function App() {
         justifyContent: "center",
       }}
     >
-      <HangmanDrawing />
-      <HangmanWord />
-      <Keyboard />
+      <HangmanDrawing
+        numOfGuesses={incorrectLetters.length}
+        setReveal={setReveal}
+      />
+      <HangmanWord wordToGuess={wordToGuess} guessedLetters={guessedLetters} />
+      <Keyboard
+        wordToGuess={wordToGuess}
+        guessedLetters={guessedLetters}
+        setGuessedLetters={setGuessedLetters}
+      />
     </div>
   );
 }
